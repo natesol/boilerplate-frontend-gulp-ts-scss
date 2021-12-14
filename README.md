@@ -11,4 +11,5 @@ Frontend Project - description...
 
 ---
 
-Live Demo: [New Frontend Project](https://natesol.github.io/project/)
+Live Demo: [New Frontend Project](https://natesol.github.io/boilerplate-frontend-gulp-ts-scss/index.html)
+Live Demo: [Project Design Scheme](https://natesol.github.io/boilerplate-frontend-gulp-ts-scss/design-scheme.html)
