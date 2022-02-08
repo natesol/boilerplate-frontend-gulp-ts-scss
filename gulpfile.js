@@ -1,32 +1,37 @@
 /* ------------------------------------------------------------------------------------------------ */
 /* Gulp Configurations ---------------------------------------------------------------------------- */
 
-import _gulp from 'gulp';
-const { src, series, parallel, dest, watch } = _gulp;
+import gulp from 'gulp';
+const { src, series, parallel, dest, watch } = gulp;
 
 import _gulp_sourcemaps from 'gulp-sourcemaps';
 const { init, write } = _gulp_sourcemaps;
 import rename from 'gulp-rename';
-import concat from 'gulp-concat';
-import mustache from "gulp-mustache";
+import replace from 'gulp-replace';
 
 import htmlmin from 'gulp-htmlmin'; // htmlmin options: https://github.com/kangax/html-minifier#options-quick-reference
 
 import _sass from 'sass';
 import _gulp_sass from 'gulp-sass';
 const sass = _gulp_sass(_sass);
-import autoprefixer from 'gulp-autoprefixer';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import purgecss from 'gulp-purgecss';
 
 import typescript from 'gulp-typescript';
 const tsProject = typescript.createProject('tsconfig.json');
 import browserify from "browserify";
-import vSrc from "vinyl-source-stream";
+import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
 import tsify from "tsify";
 import terser from 'gulp-terser';
 
 import imagemin, { mozjpeg, optipng } from 'gulp-imagemin';
 import imagewebp from 'gulp-webp';
+
+import browserSync from 'browser-sync';
+
 
 
 /* ------------------------------------------------------------------------------------------------ */
@@ -35,6 +40,7 @@ import imagewebp from 'gulp-webp';
 const html = {
     srcPath: 'src/pages/*.html',
     buildPath: 'dist',
+    buildName: 'index',
     watchFiles: ['src/pages/*.html']
 }
 const scss = {
@@ -43,6 +49,7 @@ const scss = {
         assets: 'src/styles/assets.scss',
     },
     buildPath: 'dist/styles',
+    buildName: 'styles',
     watchFiles: ['src/styles/**/*.scss', '!src/styles/assets.scss', '!src/styles/assets']
 }
 const ts = {
@@ -51,6 +58,7 @@ const ts = {
         assets: ['src/scripts/assets/assets.ts', 'src/scripts/assets/**/*.ts'],
     },
     buildPath: 'dist/scripts',
+    buildName: 'app',
     watchFiles: ['src/scripts/*.ts', '!src/scripts/assets']
 }
 
@@ -67,16 +75,11 @@ const development = {
         return  src(scss.srcPath.main)
                 .pipe(init())
                 .pipe(sass())
-                .pipe(rename('index.css'))
+                .pipe(postcss([autoprefixer()]))
+                .pipe(rename(`${scss.buildName}.css`))
                 .pipe(write('.'))
                 .pipe(dest(scss.buildPath));
     },
-    // Using basic TS and no bundle...
-    // compileTS: async () => {
-    //     return  src(ts.srcPath.main)
-    //             .pipe(tsProject())
-    //             .pipe(dest(ts.buildPath));
-    // },
     compileTS: async () => {
         return  browserify({
                     basedir: ".",
@@ -87,7 +90,8 @@ const development = {
                 })
                 .plugin(tsify)
                 .bundle()
-                .pipe(vSrc("index.js"))
+                .on('error', (err) => { console.error(err.toString()) })
+                .pipe(source(`${ts.buildName}.js`))
                 .pipe(dest(ts.buildPath));
     },
     optimizeImages: async () => {
@@ -101,9 +105,10 @@ const development = {
 const production = {
     compileHTML: async () => {
         return  src(html.srcPath)
+                .pipe(replace(`href="styles/${scss.buildName}.css"`,`href="styles/${scss.buildName}.min.css"`))
+                .pipe(replace(`src="scripts/${ts.buildName}.js"`,`src="scripts/${ts.buildName}.min.js"`))
                 .pipe(htmlmin({
                     collapseWhitespace: true,
-                    collapseInlineTagWhitespace: true,
                     minifyCSS: true,
                     minifyJS: true,
                     removeComments: true
@@ -112,9 +117,13 @@ const production = {
     },
     compileSCSS: async () => {
         return  src(scss.srcPath.main)
-                .pipe(sass({outputStyle: 'compressed'}))
-                .pipe(autoprefixer({ cascade: false }))
-                .pipe(rename('index.min.css'))
+                .pipe(sass())
+                .pipe(postcss([
+                    autoprefixer(),
+                    cssnano()
+                ]))
+                .pipe(rename(`${scss.buildName}.min.css`))
+                .pipe(purgecss({content: [html.srcPath]}))
                 .pipe(dest(scss.buildPath));
     },
     compileTS: async () => {
@@ -127,7 +136,8 @@ const production = {
                 })
                 .plugin(tsify)
                 .bundle()
-                .pipe(vSrc("index.min.js"))
+                .on('error', (err) => { console.error(err.toString()) })
+                .pipe(source(`${ts.buildName}.min.js`))
                 .pipe(buffer())
                 .pipe(terser())
                 .pipe(dest(ts.buildPath));
@@ -144,25 +154,42 @@ const production = {
 }
 
 
+const browsersync = {
+    serve: async (cb) => {
+        browserSync.init({
+            server: {
+                baseDir: "./dist"
+            }
+        });
+        cb();
+    },
+
+    reload: async (cb) => {
+        browserSync.reload();
+        cb();
+    }
+}
+
 /* ------------------------------------------------------------------------------------------------ */
 /* Gulp Tasks ------------------------------------------------------------------------------------- */
 
 const watchTask = () => {
-    watch(html.watchFiles, series(development.compileHTML)),
-    watch(scss.watchFiles, series(development.compileSCSS)),
-    watch(ts.watchFiles,   series(development.compileTS))
+    watch(html.watchFiles, series(development.compileHTML, browsersync.reload)),
+    watch(scss.watchFiles, series(development.compileSCSS, browsersync.reload)),
+    watch(ts.watchFiles,   series(development.compileTS, browsersync.reload))
 }
-const devBuild = parallel(
+const developmentBuild = parallel(
     development.compileHTML,
     development.compileSCSS,
     development.compileTS,
     development.optimizeImages
 );
-const devWatch = series(
-    devBuild,
+const developmentWatch = series(
+    developmentBuild,
+    browsersync.serve,
     watchTask
 );
-const prodBuild = parallel(
+const productionBuild = parallel(
     production.compileHTML,
     production.compileSCSS,
     production.compileTS,
@@ -171,10 +198,10 @@ const prodBuild = parallel(
 
 
 export {
-    devBuild as dev,
-    devWatch as watch,
-    prodBuild as build,
-    prodBuild as default,
+    developmentBuild as dev,
+    developmentWatch as watch,
+    productionBuild as build,
+    productionBuild as default,
 };
 
 

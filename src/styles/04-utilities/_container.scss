@@ -1,0 +1,33 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Container ---------------------------------------------------------------------------------- */
+
+
+@mixin container ($max-width: 100%) {
+    width: min(100%, $max-width);
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+$container-base-width: 60rem;
+$container-width-list: (
+    2xs: $container-base-width * 0.55,
+    xs: $container-base-width * 0.7,
+    sm: $container-base-width * 0.85,
+    md: $container-base-width,
+    lg: $container-base-width * 1.15,
+    xl: $container-base-width * 1.25
+);
+
+
+.container {
+    @include container($container-base-width);
+}
+
+@each $key, $val in $container-width-list {
+    .container-#{$key}{
+        @include container($val);
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

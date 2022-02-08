@@ -1,0 +1,40 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Base Rules - Barrel File ------------------------------------------------------------------- */
+
+
+/* Assets ----------------------------- */
+/**
+ *  External reset file.
+**/
+@import '../00-assets/baseline-unified';
+
+
+/* Typography ------------------------- */
+/**
+ * headers & titles: 'Mulish', sans-serif;
+ * body & main content: 'Open Sans', sans-serif;
+ * extra content: 'Roboto', sans-serif;
+ * code: 'Source Code Pro', monospace;
+**/
+@include google-font(
+    ('Poppins', ('400' '700' '900')),
+    ('Mulish', ('400' '700' '900')),
+    ('Open Sans', ('400' '700' '400i')),
+    ('Roboto', ('400' '700')),
+    ('Source Code Pro', ('400' '700')),
+);
+
+
+/* Global Styles ---------------------- */
+/**
+ * Base CSS custom-properties (variables) for the project styling.
+**/
+@import 'custom-properties';
+/**
+ * Base global styles - custom reset & document level elements basic styling.
+**/
+@import 'global-styles';
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

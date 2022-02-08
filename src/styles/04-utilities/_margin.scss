@@ -1,0 +1,40 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Margins ------------------------------------------------------------------------------------ */
+
+
+$margin-base-size: 0.35rem;
+$margin-base-values: (
+    '0': 0,
+    '1': $margin-base-size,
+    '2': $margin-base-size * 2,
+    '3': $margin-base-size * 4,
+    '4': $margin-base-size * 6,
+    '5': $margin-base-size * 8,
+    '6': $margin-base-size * 10,
+    '7': $margin-base-size * 12,
+    '8': $margin-base-size * 14,
+    '9': $margin-base-size * 16,
+    '10': $margin-base-size * 18,
+);
+$margins-list: (
+    'margin': 'm',
+    'margin-left': 'ml',
+    'margin-right': 'mr',
+    'margin-top': 'mt',
+    'margin-bottom': 'mb',
+);
+
+
+// Generate utility classes for each margin.
+@each $property, $symbol in $margins-list {
+    @each $key, $val in $margin-base-values {
+        .#{$symbol}-#{$key} {
+            #{$property}: $val;
+        }
+    }
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

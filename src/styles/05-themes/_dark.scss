@@ -1,0 +1,56 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Dark Theme Styles -------------------------------------------------------------------------- */
+
+
+:root[theme="dim"],
+:root[theme="dark"] {
+    /* */
+    color-scheme: dark;
+
+    /* Colors In Use ------------------ */
+    --clr-prm-h: 187;
+    --clr-prm-s: 89%;
+    --clr-prm-l: 46%;
+
+    --clr-sec-h: 256;
+    --clr-sec-s: 79%;
+    --clr-sec-l: 47%;
+
+    --clr-acc-h: 46;
+    --clr-acc-s: 100%;
+    --clr-acc-l: 51%;
+
+    --clr-info-bg:     hsl(211 60% 24%);
+    --clr-info-txt:    hsl(209 100% 85%);
+    --clr-error-bg:    hsl(307 23% 15%);
+    --clr-error-txt:   hsl(338, 100%, 82%);
+    --clr-success-bg:  hsl(174 53% 15%);
+    --clr-success-txt: hsl(155 68% 85%);
+    
+    --shadow-c: hsl(0 0% 0% / 30%);
+
+    --body-bg-c: var(--clr-gray-09);
+    --body-bg-h: var(--clr-gray-08);
+    --body-txt-c: var(--clr-gray-02);
+
+    --sheet-bg-c: var(--clr-gray-08);
+    --sheet-txt-c: var(--clr-gray-01);
+
+    --title-c: var(--clr-prm);
+
+    --btn-txt-c: var(--clr-black);
+    --btn-bg-c: var(--gradient-p-a);
+    
+    
+    img {
+        filter: grayscale(0.3);
+
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

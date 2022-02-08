@@ -1,13 +1,17 @@
 /* ------------------------------------------------------------------------------------------------ */
-/* --- Project Styles Entry ----------------------------------------------------------------------- */
+/* --- Utilities Rules - Barrel File -------------------------------------------------------------- */
 
 
-@import '00-configurations';
-@import '01-base';
-@import '02-layouts';
-@import '03-components';
-@import '04-utilities';
-@import '05-themes';
+@import 'border-radius';
+@import 'clickable';
+@import 'container';
+@import 'display';
+@import 'font-size';
+@import 'font-weight';
+@import 'margin';
+@import 'opacity';
+@import 'padding';
+
 
 
 /* ------------------------------------------------------------------------------------------------ */

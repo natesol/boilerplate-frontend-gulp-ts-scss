@@ -1,0 +1,23 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Font-Weight -------------------------------------------------------------------------------- */
+
+
+$font-weight-base-values: (
+    "base": $fontWeight-normal,
+    "light": $fontWeight-light,
+    "normal": $fontWeight-normal,
+    "bold": $fontWeight-bold,
+    "black": $fontWeight-black,
+);
+
+
+// Generate utility classes for each font-weight.
+@each $key, $val in $font-weight-base-values {
+    .fw-#{$key} {
+        font-size: $val;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

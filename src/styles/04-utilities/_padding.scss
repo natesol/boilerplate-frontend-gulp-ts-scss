@@ -1,0 +1,40 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Paddings ----------------------------------------------------------------------------------- */
+
+
+$padding-base-size: 0.35rem;
+$padding-base-values: (
+    '0': 0,
+    '1': $padding-base-size,
+    '2': $padding-base-size * 2,
+    '3': $padding-base-size * 4,
+    '4': $padding-base-size * 6,
+    '5': $padding-base-size * 8,
+    '6': $padding-base-size * 10,
+    '7': $padding-base-size * 12,
+    '8': $padding-base-size * 14,
+    '9': $padding-base-size * 16,
+    '10': $padding-base-size * 18,
+);
+$paddings-list: (
+    'padding': 'p',
+    'padding-left': 'pl',
+    'padding-right': 'pr',
+    'padding-top': 'pt',
+    'padding-bottom': 'pb',
+);
+
+
+// Generate utility classes for each padding.
+@each $property, $symbol in $paddings-list {
+    @each $key, $val in $padding-base-values {
+        .#{$symbol}-#{$key} {
+            #{$property}: $val;
+        }
+    }
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

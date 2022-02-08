@@ -2,53 +2,67 @@
 <html lang="en" dir="ltr">
 <head>
     <!-- Meta Data -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
 
-    <!-- SEO Information -->
-    <meta name="author" content="natesoln" />
-    <meta name="description" content="New clean project template..." />
-    <meta name="subject" content="New project" />
-    <meta name="copyright" content="natesoln" />
-    <meta name="keywords" content="new, project" />
-
-    <!-- Robots Details (https://developers.google.com/search/reference/robots_meta_tag) -->
-    <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1" />
-    <link rel="canonical" href="https://this-project-url.com/" />
-
-    <!-- Open-Graph SEO Information -->
-    <meta property="og:url" content="https://this-project-url.com/" />
-    <meta property="og:title" content="Page title for better SEO..." />
-    <meta property="og:description" content="New clean project template..." />
-    <meta property="og:image" content="https://www.argola.com/wp-content/uploads/placeholder-blue-800x600px.png" />
-    <meta property="og:image:secure_url" content="https://www.argola.com/wp-content/uploads/placeholder-blue-800x600px.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="natesoln" />
+    <!-- Robots Details https://developers.google.com/search/reference/robots_meta_tag -->
+    <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1">
+    <link rel="canonical" href="https://this-project-url.com/">
 
     <!-- Site Title -->
-    <title>New Frontend Project</title>
+    <!-- title: maximum of 70 characters | optimal of 55-60 characters -->
+    <title>Frontend Boilerplate - a detailed and keyword rich title for this webpage</title>
+    
+    <!-- SEO Information -->
+    <!-- application-name: the name of the application running in the web page. (!) Don't define "application-name" on a simple web pages (!) -->
+    <meta name="application-name" content="Frontend Boilerplate">
+    <!-- description: minimum of 50 characters | maximum of 180 characters | optimal of 150 characters -->
+    <meta name="description" content="New clean project boilerplate - a detailed, keyword rich, and seo friendly description of this webpage...">
+    <!-- author: the name of this document's creator -->
+    <meta name="author" content="natesoln">
+    <!-- copyright: the name of this document's content copyright owner (different than author) -->
+    <meta name="copyright" content="natesoln">
+    <!-- keywords: words relevant to the page's content separated by commas -->
+    <meta name="keywords" content="frontend boilerplate, frontend, boilerplate, html css js template">
+
+    <!-- Open-Graph Object Information -->
+    <!-- og:title: maximum of 55 characters | optimal of 35-40 characters -->
+    <meta property="og:title" content="Frontend Boilerplate - short title for this webpage">
+    <!-- og:url: a full link to the current webpage address (the canonical URL!) -->
+    <meta property="og:url" content="https://this-project-url.com/">
+    <!-- og:description: minimum of 30 characters | maximum of 70 characters | optimal of 60 characters -->
+    <meta property="og:description" content="New clean project boilerplate - a description for this webpage...">
+    <!-- og:image: an image URL to represent this webpage. the image size must be less than 300KB and with minimum dimensions of 300x200. *(This image should be served via a HTTPS connection with a valid non-self-signed certificate)* -->
+    <meta property="og:image" content="images/page-content.webp">
+    <!-- og:type: this webpage og object type. *(global types available: http://ogp.me/#types)* -->
+    <meta property="og:type" content="website">
+    <!-- og:locale: this webpage content locale. *(also use "og:locale:alternate" if this page have other language translations available)* -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="he_IL">
+    <!-- og:site_name: the name which should be displayed for the overall site (for a stand alone page the page title) -->
+    <meta property="og:site_name" content="Frontend Boilerplate">
+    <!-- twitter's share documentation: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="image description">
 
     <!-- Shortcut Icon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-    <link rel="icon" sizes="192x192" href="images/favicon.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="images/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <!-- <link rel="icon" type="image/x-icon" href="images/favicon.ico"> -->
+    <!-- <link rel="icon" sizes="192x192" href="images/favicon.png"> -->
+    <link rel="apple-touch-icon" type="image/svg+xml" href="images/favicon.svg">
 
-    <!-- Mobile Browser Theme Color - Chrome, Edge, Firefox, OS and Opera -->
-    <meta name="theme-color" content="#000" />
-    <!-- Mobile Browser Theme Color - iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <!-- Browser Theme Color -->
+    <meta name="theme-color" content="#000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
 
     <!-- Styles and Scripts resources -->
     <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" media="all" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./styles/styles.css">
     <!-- Main JavaScript -->
-    <script defer src="scripts/index.js"></script>
+    <script defer src="./scripts/app.js"></script>
 </head>
 <body>
     <!--* Page Preloading Effect *-->
@@ -125,11 +139,24 @@
     </div>
     <!--* /Page Preloading Effect *-->
 
-    <main class="container">
-        <h1 class="title">New clean project template!</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, facilis consequuntur aliquid obcaecati culpa fuga veritatis dignissimos ab asperiores ex rerum ipsam molestias.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate vel dolorem dolorum?</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, ad dicta dignissimos ipsa dolores esse at soluta, similique, laborum deserunt distinctio? Sint, quidem rem!</p>
+    <header class="container-sm mt-4 mb-2">
+        <a href="./index.html" class="title clickable">
+            <h1>Basic Front-end Boilerplate!</h1>
+        </a>
+        <h4>Clean project template for a frontend webapp for HTML, SCSS and TypeScript</h4>
+    </header>
+    <main class="container-sm">
+        <p>This is a fully featured project starter for front-end web application. This project is configured using <b><em>Gulp 4</em></b> to process <b><em>HTML</em></b>, <b><em>SCSS</em></b>, <b><em>TypeScript</em></b> and to <b><em>optimize images</em></b> (jpg/png files).</p>
+        <br>
+        <h5>In this proejct, Gulp is configured to run the following functions:</h5>
+        <ul>
+            <li>minify any HTML files</li>
+            <li>compile any SCSS files to a CSS bundle file</li>
+            <li>autoprefix, minify and purge the CSS bundle</li>
+            <li>compile any TS files to a JS (ES6) bundle file (no modules!)</li>
+            <li>uglify the JS bundle</li>
+            <li>optimizing any jpg/png images</li>
+        </ul>
     </main>
 </body>
 </html>

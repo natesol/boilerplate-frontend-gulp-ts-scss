@@ -1,0 +1,31 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Alerts ------------------------------------------------------------------------------------- */
+
+
+@mixin alert ($_color, $_bg-color, $_border-color) {
+    padding: 0.375em 0.75em;
+    margin-bottom: 1rem;
+    border-radius: $radius-lg;
+    border: 1px solid $_border-color;
+    background: $_bg-color;
+    color: $_color;
+}
+$alert-list: (
+    info: ($color-info-txt $color-info-bg $color-info-txt),
+    error: ($color-error-txt $color-error-bg $color-error-txt),
+    success: ($color-success-txt $color-success-bg $color-success-txt),
+);
+
+
+.alert {
+    @include alert($body-txt-color, $body-bg-highlight-color, $body-txt-color);
+}
+@each $key, $val in $alert-list {
+    .alert-#{$key} {
+        @include alert($val...);
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

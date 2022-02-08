@@ -1,0 +1,82 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Buttons ------------------------------------------------------------------------------------ */
+
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+
+    font-family: $fontFamily-title;
+    font-size: $fontSize-base;
+    font-weight: $fontWeight-normal;
+    padding: 0.4em 1.2em;
+    border-radius: $radius-md;
+}
+
+.btn-primary {
+    color: $color-white;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    box-shadow: $glow-primary-sm;
+
+    &:hover:not(:active) {
+        box-shadow: $glow-primary-lg;
+    }
+}
+.btn-secondary {
+    color: $color-white;
+    background-color: $color-secondary;
+    border: 1px solid $color-secondary;
+    box-shadow: $glow-secondary-sm;
+    
+    &:hover:not(:active) {
+        box-shadow: $glow-secondary-lg;
+    }
+}
+.btn-accent {
+    color: $color-white;
+    background-color: $color-accent;
+    border: 1px solid $color-accent;
+    box-shadow: $glow-accent-sm;
+    
+    &:hover:not(:active) {
+        box-shadow: $glow-accent-lg;
+    }
+}
+
+.btn-outline-primary {
+    color: $color-primary;
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    box-shadow: $glow-primary-sm;
+    
+    &:hover {
+        color: $color-white;
+        background-color: $color-primary;
+    }
+}
+.btn-outline-secondary {
+    color: $color-secondary;
+    background-color: transparent;
+    border: 1px solid $color-secondary;
+    box-shadow: $glow-secondary-sm;
+    
+    &:hover {
+        color: $color-white;
+        background-color: $color-secondary;
+    }
+}
+.btn-outline-accent {
+    color: $color-accent;
+    background-color: transparent;
+    border: 1px solid $color-accent;
+    box-shadow: $glow-accent-sm;
+    
+    &:hover {
+        color: $color-white;
+        background-color: $color-accent;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

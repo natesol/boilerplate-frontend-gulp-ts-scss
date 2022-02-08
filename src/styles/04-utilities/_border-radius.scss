@@ -1,0 +1,34 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Border-Radius ------------------------------------------------------------------------------ */
+
+
+$radius-base-values: (
+    "base": $radius-base,
+    "0": 0,
+    "sm": $radius-sm,
+    "md": $radius-md,
+    "lg": $radius-lg,
+    "full": 100vh,
+    "ellipse": 50%,
+);
+$radius-list: (
+    'border-radius': 'r',
+    'border-top-left-radius': 'r-tl',
+    'border-top-right-radius': 'r-tr',
+    'border-bottom-left-radius': 'r-bl',
+    'border-bottom-right-radius': 'r-br',
+);
+
+
+// Generate utility classes for each border-radius.
+@each $property, $symbol in $radius-list {
+    @each $key, $val in $radius-base-values {
+        .#{$symbol}-#{$key} {
+            #{$property}: $val;
+        }
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

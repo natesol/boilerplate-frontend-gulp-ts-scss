@@ -1,0 +1,131 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- SCSS Variables ----------------------------------------------------------------------------- */
+
+
+/* Typology --------------------------- */
+$fontFamily-title:   var(--ff-title);
+$fontFamily-content: var(--ff-body);
+$fontFamily-extra:   var(--ff-extra);
+$fontFamily-code:    var(--ff-code);
+
+$fontWeight-light:  300;
+$fontWeight-normal: 400;
+$fontWeight-bold:   700;
+$fontWeight-black:  900;
+
+$fontSize-base: var(--fs-sm);
+$fontSize-2xs: var(--fs-2xs);
+$fontSize-xs:  var(--fs-xs);
+$fontSize-sm:  var(--fs-sm);
+$fontSize-md:  var(--fs-md);
+$fontSize-lg:  var(--fs-lg);
+$fontSize-xl:  var(--fs-xl);
+$fontSize-2xl: var(--fs-2xl);
+
+
+/* Colors ----------------------------- */
+$color-gray-00: var(--clr-gray-00);
+$color-gray-01: var(--clr-gray-01);
+$color-gray-02: var(--clr-gray-02);
+$color-gray-03: var(--clr-gray-03);
+$color-gray-04: var(--clr-gray-04);
+$color-gray-05: var(--clr-gray-05);
+$color-gray-06: var(--clr-gray-06);
+$color-gray-07: var(--clr-gray-07);
+$color-gray-08: var(--clr-gray-08);
+$color-gray-09: var(--clr-gray-09);
+$color-gray-10: var(--clr-gray-10);
+
+$color-white: var(--clr-white);
+$color-black: var(--clr-black);
+
+
+/* Colors In Use ---------------------- */
+$color-primary-light: hsl(var(--clr-prm-h) calc(var(--clr-prm-s) + 10%) calc(var(--clr-prm-l) + 10%));;
+$color-primary:       var(--clr-prm);
+$color-primary-dark:  hsl(var(--clr-prm-h) calc(var(--clr-prm-s) + 10%) calc(var(--clr-prm-l) - 10%));
+
+$color-secondary-light: var(--clr-sec-l);
+$color-secondary:       var(--clr-sec);
+$color-secondary-dark:  var(--clr-sec-d);
+
+$color-accent-light: var(--clr-acc-l);
+$color-accent:       var(--clr-acc);
+$color-accent-dark:  var(--clr-acc-d);
+
+$color-gradient-primary-to-secondary: var(--gradient-p-s);
+$color-gradient-primary-to-accent:    var(--gradient-p-a);
+
+$color-success-bg: var(--clr-success-bg);
+$color-success-txt:  var(--clr-success-txt);
+$color-info-bg:    var(--clr-info-bg);
+$color-info-txt:     var(--clr-info-txt);
+$color-error-bg:   var(--clr-error-bg);
+$color-error-txt:    var(--clr-error-txt);
+
+
+// -------------------
+$body-bg-color:           var(--body-bg-c);
+$body-bg-highlight-color: var(--body-bg-h);
+$body-txt-color:          var(--body-txt-c);
+
+$title-txt-color: var(--title-c);
+
+$sheet-bg-color:            var(--sheet-bg-c);
+$sheet-bg-highlight-color:  var(--sheet-bg-hl);
+$sheet-txt-color:           var(--sheet-txt-c);
+$sheet-txt-highlight-color: var(--sheet-txt-hl);
+
+$button-bg-color:  var(--btn-bg-c);
+$button-txt-color: var(--btn-txt-c);
+
+$tooltip-bg-color:  var(--tip-bg-c);
+$tooltip-txt-color: var(--tip-txt-c);
+
+
+/* Shadows Styles --------------------- */
+$boxShadow-xs: var(--shadow-xs);
+$boxShadow-sm: var(--shadow-sm);
+$boxShadow-md: var(--shadow-md);
+$boxShadow-lg: var(--shadow-lg);
+$boxShadow-xl: var(--shadow-xl);
+
+$glow-primary-sm:   var(--glow-prm-sm);
+$glow-primary-lg:   var(--glow-prm-lg);
+$glow-secondary-sm: var(--glow-sec-sm);
+$glow-secondary-lg: var(--glow-sec-lg);
+$glow-accent-sm:    var(--glow-acc-sm);
+$glow-accent-lg:    var(--glow-acc-lg);
+
+
+/* Radius Styles ---------------------- */
+$radius-base: var(--radius-md);
+$radius-sm: var(--radius-sm);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+
+
+/* General Animations & Effects ------- */
+$animation-function:   var(--a-fn);
+$animation-speed-slow: var(--a-speed-s);
+$animation-speed-base: var(--a-speed);
+$animation-speed-fast: var(--a-speed-f);
+
+
+/* Theme Change Animation ------------- */
+$theme-change-transition: var(--t-c-transition);
+
+
+/* 'Layers' Management (z-index) ------ */
+$layer-background: -1;
+$layer-base: 0;
+$layer-1: 1;
+$layer-2: 2;
+$layer-3: 3;
+$layer-4: 4;
+$layer-5: 5;
+$layer-foreground: 10;
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

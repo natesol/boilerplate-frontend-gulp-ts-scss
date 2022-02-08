@@ -1,0 +1,32 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Title -------------------------------------------------------------------------------------- */
+
+
+.title {
+    background: $color-gradient-primary-to-secondary;
+    background-clip: text;
+    color: transparent;
+    font-family: $fontFamily-title;
+    font-weight: $fontWeight-black;
+    font-size: $fontSize-xl;
+    width: fit-content;
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    margin: auto;
+    
+    * {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+    &:hover {
+        color: transparent;
+    }
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

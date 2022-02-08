@@ -1,0 +1,47 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- Light Theme Styles ------------------------------------------------------------------------- */
+
+// default theme
+:root,
+:root[theme="light"] {
+    /* */
+    color-scheme: light;
+
+    /* Colors In Use ------------------ */
+    --clr-prm-h: 187;
+    --clr-prm-s: 89%;
+    --clr-prm-l: 48%;
+    
+    --clr-sec-h: 256;
+    --clr-sec-s: 79%;
+    --clr-sec-l: 49%;
+    
+    --clr-acc-h: 46;
+    --clr-acc-s: 100%;
+    --clr-acc-l: 55%;
+    
+    --clr-info-bg:     hsl(209 100% 94%); // ocean light
+    --clr-info-txt:    hsl(209 100% 31%); // ocean dark
+    --clr-error-bg:    hsl(338 100% 95%); // rose light
+    --clr-error-txt:   hsl(338 100% 31%); // rose dark
+    --clr-success-bg:  hsl(157, 100%, 94%); // emerald light
+    --clr-success-txt: hsl(155 100% 31%); // emerald dark
+
+    --shadow-c: hsl(220deg 73% 7% / 19%);
+
+    --body-bg-c: var(--clr-gray-01);
+    --body-bg-h: var(--clr-gray-02);
+    --body-txt-c: var(--clr-gray-10);
+
+    --sheet-bg-c: var(--clr-gray-02);
+    --sheet-txt-c: var(--clr-gray-10);
+
+    --title-c: var(--clr-prm);
+
+    --btn-txt-c: var(--clr-white);
+    --btn-bg-c: var(--gradient-p-a);
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */

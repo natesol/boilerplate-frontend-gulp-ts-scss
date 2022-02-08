@@ -1,13 +1,14 @@
 /* ------------------------------------------------------------------------------------------------ */
-/* --- Project Styles Entry ----------------------------------------------------------------------- */
+/* --- Components Rules - Barrel File ------------------------------------------------------------- */
 
 
-@import '00-configurations';
-@import '01-base';
-@import '02-layouts';
-@import '03-components';
-@import '04-utilities';
-@import '05-themes';
+@import 'alerts';
+@import 'badges';
+@import 'buttons';
+@import 'dialog';
+@import 'title';
+@import 'tooltip';
+
 
 
 /* ------------------------------------------------------------------------------------------------ */
